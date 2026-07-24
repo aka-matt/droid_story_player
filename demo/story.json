@@ -1,0 +1,142 @@
+{
+  "title": "Self-improvement run",
+  "autoplay": true,
+  "loop": false,
+  "terminal": {
+    "title": "droid@local: self-finetuning",
+    "minHeight": 520,
+    "showSidebar": true
+  },
+  "typewriter": {
+    "enabled": true,
+    "characterDelay": 18,
+    "lineDelay": 100,
+    "cursor": true,
+    "respectReducedMotion": true
+  },
+  "sidebar": {
+    "title": "Session context",
+    "stats": [
+      { "label": "Context", "value": "43,219 tokens" },
+      { "label": "Used", "value": "17%" },
+      { "label": "Spent", "value": "$0.00" }
+    ],
+    "sections": [
+      {
+        "title": "MCP",
+        "items": [
+          {
+            "label": "gh_grep",
+            "value": "Connected",
+            "status": "success"
+          },
+          {
+            "label": "linear",
+            "value": "Needs auth",
+            "status": "warning"
+          }
+        ]
+      }
+    ]
+  },
+  "stories": [
+    {
+      "id": "landing",
+      "label": "Landing and first prompt",
+      "duration": 5500,
+      "caption": {
+        "title": "start in workspace",
+        "text": "The session starts inside a coding workspace."
+      },
+      "blocks": [
+        {
+          "type": "landing",
+          "logo": "/images/logo.svg",
+          "logoAlt": "Product logo",
+          "prompt": "who are you?",
+          "meta": "Build · droid · local",
+          "typewriter": true
+        }
+      ],
+      "footer": {
+        "path": "~/demo/self-finetuning/",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "answer",
+      "label": "Base model answer",
+      "duration": 9000,
+      "caption": {
+        "title": "base model",
+        "text": "The current model responds before training."
+      },
+      "blocks": [
+        {
+          "type": "message",
+          "role": "user",
+          "text": "who are you?"
+        },
+        {
+          "type": "message",
+          "role": "assistant",
+          "text": "I am an AI assistant running in this workspace.",
+          "typewriter": true
+        },
+        {
+          "type": "status",
+          "label": "Build",
+          "detail": "droid",
+          "status": "default"
+        }
+      ],
+      "composer": {
+        "text": "fine tune yourself to avoid the letter e.",
+        "meta": "Build · droid · local",
+        "typewriter": true
+      }
+    },
+    {
+      "id": "training",
+      "label": "Training",
+      "duration": 12000,
+      "caption": {
+        "title": "training",
+        "text": "The model is trained with the new objective."
+      },
+      "blocks": [
+        {
+          "type": "log",
+          "text": "[INFO] Starting epoch 0\n[INFO] Training for 96 steps\n[INFO] Writing metrics...",
+          "typewriter": true
+        },
+        {
+          "type": "status",
+          "label": "Build",
+          "detail": "running",
+          "status": "running"
+        }
+      ]
+    },
+    {
+      "id": "complete",
+      "label": "Updated answer",
+      "duration": 10000,
+      "caption": {
+        "title": "updated model",
+        "text": "The updated model now follows the target behavior."
+      },
+      "blocks": [
+        {
+          "type": "success",
+          "title": "PASS",
+          "paragraphs": [
+            "The pipeline finished successfully.",
+            "The new checkpoint is now active."
+          ],
+          "typewriter": true
+        }
+      ]
+    }
+  ]
+}

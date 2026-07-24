@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Story Player Demo</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 24px;
+      background: #efede5;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    droid-story-player {
+      --isp-terminal-bg: #121212;
+      --isp-accent: #d8ff57;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <droid-story-player
+      data-src="./story.json"
+      autoplay
+    ></droid-story-player>
+  </main>
+
+  <script
+    type="module"
+    src="./droid-story-player.js"
+  ></script>
+</body>
+</html>
