@@ -53,7 +53,8 @@ Data flow and boundaries:
 
 ### Theming — public vs private surface
 
-- **Public API**: `--isp-*` CSS variables (set on the host element) and `::part(...)` selectors (`root`, `terminal`, `terminal-bar`, `story`, `controls`, `caption`). Host pages theme via these.
+- **Color modes**: the terminal supports `"dark" | "light" | "system"` via the `theme` attribute or the top-level `theme` JSON field (attribute wins; default `system` = follows `prefers-color-scheme`). `element.tsx`'s `applyTheme()` reflects the JSON field onto the host attribute; the palettes themselves are pure CSS in `styles.ts` (`:host` = dark base, `:host([theme="light"])`, and a `prefers-color-scheme: light` media query for no-attr/`system`). Mode palettes only cover the terminal interior — outer chrome (`.controls`, `.caption`) is page-relative on purpose.
+- **Public API**: `--isp-*` CSS variables (set on the host element; they override the mode palettes, so never pin a palette color like `--isp-terminal-bg` in the demo page or it breaks light mode) and `::part(...)` selectors (`root`, `terminal`, `terminal-bar`, `story`, `controls`, `caption`). Host pages theme via these.
 - Internal class names inside the shadow DOM are **not** a public API — never document them as one or expect host pages to target them.
 
 ## Conventions

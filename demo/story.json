@@ -12,7 +12,7 @@
     "characterDelay": 18,
     "lineDelay": 100,
     "cursor": true,
-    "respectReducedMotion": true
+    "respectReducedMotion": false
   },
   "sidebar": {
     "title": "Session context",

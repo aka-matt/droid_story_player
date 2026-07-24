@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" role="img" aria-label="droid">
+  <style>
+    .wordmark { fill: #121212; }
+    @media (prefers-color-scheme: dark) {
+      .wordmark { fill: #ecece8; }
+    }
+  </style>
+  <rect x="6" y="12" width="56" height="56" rx="14" fill="#d8ff57"/>
+  <text x="34" y="50" text-anchor="middle" font-family="'SFMono-Regular','Cascadia Code',Menlo,Monaco,Consolas,monospace" font-size="25" font-weight="700" fill="#121212">&gt;_</text>
+  <text x="78" y="53" class="wordmark" font-family="'SFMono-Regular','Cascadia Code',Menlo,Monaco,Consolas,monospace" font-size="36" font-weight="700">droid</text>
+</svg>

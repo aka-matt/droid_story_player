@@ -20,12 +20,14 @@ export function TypewriterText({
   className,
   onComplete
 }: Props) {
-  const [length, setLength] = useState(enabled ? 0 : text.length);
-
   const reducedMotion = useMemo(() => {
     if (options?.respectReducedMotion === false) return false;
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }, [options?.respectReducedMotion]);
+
+  const [length, setLength] = useState(() =>
+    active && (!enabled || reducedMotion) ? text.length : 0
+  );
 
   useEffect(() => {
     if (!active) {
@@ -87,7 +89,7 @@ export function TypewriterText({
   return (
     <Tag className={className}>
       {text.slice(0, length)}
-      {options?.cursor !== false && !complete && (
+      {active && options?.cursor !== false && !complete && (
         <span className="cursor" aria-hidden="true">▋</span>
       )}
     </Tag>

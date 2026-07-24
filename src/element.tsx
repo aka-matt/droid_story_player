@@ -151,7 +151,20 @@ export class DroidStoryElement extends HTMLElement {
     };
   }
 
+  private applyTheme() {
+    if (this.hasAttribute("theme")) return;
+
+    const theme = this.currentData.theme;
+
+    if (theme === "dark" || theme === "light" || theme === "system") {
+      this.setAttribute("theme", theme);
+    } else {
+      this.removeAttribute("theme");
+    }
+  }
+
   private render() {
+    this.applyTheme();
     this.root?.render(
       <StoryPlayer data={this.currentData} host={this} />
     );

@@ -112,6 +112,7 @@ export interface StoryPlayerData {
   autoplay?: boolean;
   loop?: boolean;
   startIndex?: number;
+  theme?: "dark" | "light" | "system";
   terminal?: {
     title?: string;
     minHeight?: number;
