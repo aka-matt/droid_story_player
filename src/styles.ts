@@ -8,7 +8,7 @@ export const styles = String.raw`
   --isp-text: #ecece8;
   --isp-muted: #999991;
   --isp-accent: #d8ff57;
-  --isp-user-text: #d8ff57;
+  --isp-user-accent: #d8ff57;
   --isp-success: #c7ff63;
   --isp-warning: #f8c96b;
   --isp-error: #ff7575;
@@ -51,7 +51,7 @@ export const styles = String.raw`
   --isp-glow: rgba(0,0,0,.025);
   --isp-text: #1d1d1a;
   --isp-muted: #6d6d64;
-  --isp-user-text: #4d7c0f;
+  --isp-user-accent: #4d7c0f;
   --isp-success: #4a9e05;
   --isp-warning: #b45309;
   --isp-error: #dc2626;
@@ -88,7 +88,7 @@ export const styles = String.raw`
     --isp-glow: rgba(0,0,0,.025);
     --isp-text: #1d1d1a;
     --isp-muted: #6d6d64;
-    --isp-user-text: #4d7c0f;
+    --isp-user-accent: #4d7c0f;
     --isp-success: #4a9e05;
     --isp-warning: #b45309;
     --isp-error: #dc2626;
@@ -181,13 +181,14 @@ button {
 }
 
 .message--user {
-  color: var(--isp-user-text);
+  padding-left: 14px;
+  border-left: 3px solid var(--isp-user-accent);
 }
 
 .thought {
   padding-left: 14px;
   color: var(--isp-thought-text);
-  border-left: 2px solid var(--isp-thought-border);
+  border-left: 3px solid var(--isp-thought-border);
   font-size: 14px;
   font-style: italic;
   line-height: 1.65;
